@@ -10,8 +10,8 @@ internal sealed class DbContextTests
     [OneTimeSetUp]
     public void InitializeEnv()
     {
-        var value = Environment.GetEnvironmentVariable(StringExt.EnvKey);
-        Environment.SetEnvironmentVariable(StringExt.EnvKey, value ?? Guid.NewGuid().ToString());
+        var value = Environment.GetEnvironmentVariable(StringExt.HashingSaltKey);
+        Environment.SetEnvironmentVariable(StringExt.HashingSaltKey, value ?? Guid.NewGuid().ToString());
     }
 
     [Test]
